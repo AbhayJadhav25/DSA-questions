@@ -36,6 +36,6 @@ class isSorted{
         }else{
             System.out.println("Array is not sorted in any order");
         }
-
+        sc.close();
     }
 }
