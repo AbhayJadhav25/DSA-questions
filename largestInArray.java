@@ -20,6 +20,6 @@ class largestInArray{
             
         }
         System.out.println("Largest element in an array is "+max);
-        sc.close();
+        scan.close();
     }
 }
