@@ -1,12 +1,12 @@
 import java.util.*;
 class reverseArray{
     public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
+        Scanner scan = new Scanner(System.in);
+        int size = scan.nextInt();
         int arr[] = new int[size];
 
         for(int i = 0 ; i<size ; i++){
-            arr[i] = sc.nextInt();
+            arr[i] = scan.nextInt();
         }
 
         /*method 1
@@ -35,6 +35,6 @@ class reverseArray{
         System.out.print(reverse[i]+" ");
        }
        
-    sc.close();
+    scan.close();
     }
 }
