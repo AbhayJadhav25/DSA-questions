@@ -2,16 +2,16 @@ import java.util.*;
 
 class RemoveDuplicate {
     public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.println("Enter Size of an array : ");
-        int size = sc.nextInt();
+        int size = scan.nextInt();
         int arr[] = new int[size];
         int newArr[] = new int[size];
         
         //Sort an array first
         System.out.println("Enter Elements in an array : ");
         for(int i=0;i<size ; i++){
-            arr[i] = sc.nextInt();
+            arr[i] = scan.nextInt();
         }
         for(int i=0;i<size-1;i++){
             for(int j=0 ; j<size-1-i ; j++){
@@ -42,6 +42,6 @@ class RemoveDuplicate {
          for(int i=0 ; i<j ;i++){
             System.out.print(newArr[i]+" ");
          }
-         sc.close();
+         scan.close();
     }
 }
