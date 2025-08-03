@@ -1,5 +1,27 @@
 import java.util.*;
 public class RowColumnWiseSearch {
+    static boolean search(int matrix[][] , int target){
+        int row = matrix.length;
+        int cols = matrix[0].length;
+
+        int start = 0 ;
+        int end = row*cols-1;
+
+        while(start <= end){
+            int mid = start+(end - start)/2;
+            int midVal = matrix[mid/cols][mid%cols];
+            if(midVal==target){
+                return true;
+            }else if(midVal < target){
+                start = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return false;
+    }
+
+   /*This logic time complexity is O(log(m+n))
    static boolean searchCol(int arr[][] , int val , int row){
         int cols = arr[0].length;
         int start = 0 , end = cols-1;
@@ -33,7 +55,7 @@ public class RowColumnWiseSearch {
             }
         }
         return false; 
-    }
+    }*/
         public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of row : ");
