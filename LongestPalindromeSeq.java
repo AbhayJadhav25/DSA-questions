@@ -10,19 +10,19 @@ public class LongestPalindromeSeq {
       int left = i - 1, right = i;
       while (left >= 0 && right < size && str.charAt(left) == str.charAt(right)) {
         if (right - left + 1 > maxlen) {
-          maxlen = right - left + 1; // FIXED
+          maxlen = right - left + 1; 
           start = left;
         }
         left--;
         right++;
       }
 
-      // Odd length palindrome
+    //Odd length palindrome
       left = i - 1;
       right = i + 1;
       while (left >= 0 && right < size && str.charAt(left) == str.charAt(right)) {
         if (right - left + 1 > maxlen) {
-          maxlen = right - left + 1; // already correct
+          maxlen = right - left + 1; 
           start = left;
         }
         left--;
@@ -35,7 +35,7 @@ public class LongestPalindromeSeq {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter any string : ");
-    String str = sc.nextLine(); // FIXED
+    String str = sc.nextLine(); 
     String res = longestPalindrome(str);
     System.out.println("Longest Palindromic Substring: " + res);
     sc.close();

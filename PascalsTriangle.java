@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 class PascalsTriangle {
     public static int[][] generate(int rows) {
-        int[][] triangle = new int[rows][];  // jagged array
+        int[][] triangle = new int[rows][];  
 
         for (int i = 0; i < rows; i++) {
-            triangle[i] = new int[i + 1];    // each row has i+1 elements
-            triangle[i][0] = 1;              // first element is always 1
-            triangle[i][i] = 1;              // last element is always 1
+            triangle[i] = new int[i + 1];    
+            triangle[i][0] = 1;              
+            triangle[i][i] = 1;              
 
             // fill middle elements
             for (int j = 1; j < i; j++) {
