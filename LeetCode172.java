@@ -23,6 +23,7 @@ public class LeetCode172 {
   public static int trailZero(int num) {
     if (num < 0)
       return -1;
+      
     int count = 0;
     while (num / 5 > 0) {
       count += (num / 5);
