@@ -10,7 +10,7 @@ public class LeetCode202 {
       }
       num = sum;
     }
-    if (sum == 1 || sum == 7)
+    if (sum == 1 || sum == /)
       return true;
     else
       return false;
