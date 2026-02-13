@@ -67,6 +67,42 @@ public class Array {
     }
   }
 
+  public static void reverseString(String str) {
+    char ch[] = str.toCharArray();
+
+    int left = 0, right = str.length() - 1;
+
+    while (left < right) {
+      char temp = ch[left];
+      ch[left] = ch[right];
+      ch[right] = temp;
+
+      left++;
+      right--;
+    }
+
+    System.out.println(new String(ch));
+  }
+
+  public static void palindromString(String str) {
+    boolean isPalindrome = true;
+    int left = 0, right = str.length() - 1;
+
+    while (left < right) {
+      if (str.charAt(left) != str.charAt(right)) {
+        isPalindrome = false;
+        break;
+      }
+      left++;
+      right--;
+    }
+    if (isPalindrome) {
+      System.out.println("String is Palindrome");
+    } else {
+      System.out.println("String is not Palindrome.");
+    }
+  }
+
   public static void main(String[] args) {
     int arr[] = { 1, 2, 3, 2, 1, 5, 6 };
     FindDuplicate(arr);
@@ -81,5 +117,12 @@ public class Array {
 
     int arr4[] = { 21, 22, 23, 34, 45, 56 };
     checkSort(arr4);
+
+    String str = "Abhay jadhav";
+    reverseString(str);
+
+    String str2 = "madam";
+    palindromString(str2);
+    palindromString(str);
   }
 }
