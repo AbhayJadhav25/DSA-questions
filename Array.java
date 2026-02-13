@@ -53,6 +53,20 @@ public class Array {
     }
   }
 
+  public static void checkSort(int arr[]) { // 23, 34, 45, 56, 67
+    boolean isSort = true;
+    for (int i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        isSort = false;
+      }
+    }
+    if (isSort) {
+      System.out.println("Array is sorted.");
+    } else {
+      System.out.println("Array is not sorted");
+    }
+  }
+
   public static void main(String[] args) {
     int arr[] = { 1, 2, 3, 2, 1, 5, 6 };
     FindDuplicate(arr);
@@ -60,5 +74,12 @@ public class Array {
 
     int arr2[] = { 21, 56, 43, 12, 34, 98, 87 };
     reverseArray(arr2);
+    System.out.println();
+    int arr3[] = { 23, 34, 45, 56, 67 };
+    checkSort(arr3);
+    checkSort(arr2);
+
+    int arr4[] = { 21, 22, 23, 34, 45, 56 };
+    checkSort(arr4);
   }
 }
