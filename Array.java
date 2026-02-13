@@ -26,6 +26,7 @@ public class Array {
     }
   }
 
+  // Find Largest number frome the array.
   public static void findLargest(int arr[]) {
     int max = Integer.MIN_VALUE;
 
@@ -37,6 +38,7 @@ public class Array {
     System.out.println("Largest Value : " + max);
   }
 
+  // Reverse the array.
   public static void reverseArray(int arr[]) {
     int left = 0, right = arr.length - 1;
     System.out.println("Reverse Array : ");
@@ -53,6 +55,7 @@ public class Array {
     }
   }
 
+  // Check array is sorted or not.
   public static void checkSort(int arr[]) { // 23, 34, 45, 56, 67
     boolean isSort = true;
     for (int i = 0; i < arr.length - 1; i++) {
@@ -67,6 +70,7 @@ public class Array {
     }
   }
 
+  // Reverse the string.
   public static void reverseString(String str) {
     char ch[] = str.toCharArray();
 
@@ -84,6 +88,7 @@ public class Array {
     System.out.println(new String(ch));
   }
 
+  // Check Strinng is palindrome or not.
   public static void palindromString(String str) {
     boolean isPalindrome = true;
     int left = 0, right = str.length() - 1;
@@ -103,8 +108,9 @@ public class Array {
     }
   }
 
+  // Count Frequency of Character.
   public static void countFrequency(String str) {
-    int freq[] = new int[256];
+    int freq[] = new int[256]; // ASCII Range 0 to 256.
 
     for (int i = 0; i < str.length(); i++) {
       freq[str.charAt(i)]++;
@@ -112,7 +118,7 @@ public class Array {
 
     for (int i = 0; i < 256; i++) {
       if (freq[i] > 0) {
-        System.out.println((char) i + " includes " + freq[i]);
+        System.out.println((char) i + " occurs " + freq[i]);
       }
     }
   }
