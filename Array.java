@@ -103,6 +103,20 @@ public class Array {
     }
   }
 
+  public static void countFrequency(String str) {
+    int freq[] = new int[256];
+
+    for (int i = 0; i < str.length(); i++) {
+      freq[str.charAt(i)]++;
+    }
+
+    for (int i = 0; i < 256; i++) {
+      if (freq[i] > 0) {
+        System.out.println((char) i + " includes " + freq[i]);
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int arr[] = { 1, 2, 3, 2, 1, 5, 6 };
     FindDuplicate(arr);
@@ -124,5 +138,9 @@ public class Array {
     String str2 = "madam";
     palindromString(str2);
     palindromString(str);
+
+    String str3 = "AAABBCDD";
+    countFrequency(str3);
+
   }
 }
