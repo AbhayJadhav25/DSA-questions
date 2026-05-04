@@ -5,7 +5,6 @@ def extractNumber(num):
         num = num // 10
 
 def main():
-    print("in mian")
     number = int(input("Enter Number : "))
     extractNumber(number)
 if __name__ == "__main__":

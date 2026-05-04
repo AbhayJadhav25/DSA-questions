@@ -52,7 +52,7 @@ int push(struct stack *s, char ch)
   {
     s->top++;
     s->str[s->top] = ch;
-    return 1;
+    return ch;
   }
 }
 int checkParenthesis(struct stack *s, char *exp)
