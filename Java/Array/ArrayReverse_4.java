@@ -12,7 +12,7 @@ class ArrayReverse_4{
         return arr;
     }
     public static void main(String a[]){
-        int arr[] = {2,4,6,8,9};
+        int arr[] = {2,4,6,8,9 , 7};
         int ans[] = reverseArray(arr);
 
         for(int n :ans){
