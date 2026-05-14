@@ -25,9 +25,23 @@ public class ShiftByKPos {
             System.out.print(nums+" ");
         }
     }
+
+    static void shiftByKPosition2(int arr[] , int k){
+        int temp[] = new int[arr.length];
+        
+        int n = arr.length;
+
+        for(int i=0 ; i<arr.length ; i++){
+            temp[(i+k)%n] = arr[i];
+        }
+
+        for(int nums : temp){
+            System.out.print(nums+" ");
+        }
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6,7,8,9};
-         shiftByKPosition(arr , 4);
+         shiftByKPosition2(arr , 4);
     
         // System.out.print("Array Before Shifting =  ");
         // for(int nums : arr){
