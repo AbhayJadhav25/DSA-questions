@@ -10,17 +10,18 @@ public class ModeOdArray {
         System.out.println(freq);
 
         int maxFreq = -1;
-        int maxKeyFreq = -1;
+        int maxFreqKey = -1;
 
         for(int key : freq.keySet()){
             int currentKey = key;
             int currentKeyFreq = freq.get(currentKey);
 
-            if(currentKeyFreq > maxKeyFreq){
-                maxKeyFreq = currentKeyFreq;
+            if(currentKeyFreq > maxFreq){
+                maxFreqKey = currentKey;
+                maxFreq = currentKeyFreq;
             }
         }
-        return maxKeyFreq;
+        return maxFreqKey;
     }
     public static void main(String[] args) {
         int arr[] = {5,2,3,2,3,1,2,9};
