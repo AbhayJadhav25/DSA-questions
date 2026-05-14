@@ -2,7 +2,7 @@
 //O/p : 1 6 2 5 3 4
 
 
-public class AlternativeExtreme {
+public class AlternativeExtreme_3 {
     public static int[] alternativeExtreme(int arr[]){
         int arr1[] = new int[arr.length];
         int left = 0 , right = arr.length-1;
