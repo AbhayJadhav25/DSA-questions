@@ -14,7 +14,10 @@ public class ThreeSum11 {
                         temp.add(arr[i]);
                         temp.add(arr[j]);
                         temp.add(arr[k]);
-                        op.add(temp);
+                        Collections.sort(temp);
+                        if(!op.contains(temp)){
+                            op.add(temp);
+                        }
                     }
                 }
             }
