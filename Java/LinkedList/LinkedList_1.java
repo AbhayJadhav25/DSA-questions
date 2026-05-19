@@ -141,8 +141,91 @@ public class LinkedList_1{
         }
         temp.next = null;
         tail = temp;
+        size--;
         return val;
         
+    }
+    int removeByIndex(int idx){
+
+        if(idx < 1 || idx > size){
+            System.out.println("Invalid index");
+        }
+        if(head==null){
+            System.out.println("Linked list is empty");
+            return -1;
+        }
+        if(idx == 1){
+            int val = removeFirst();
+            return val;
+        }
+        if(idx == size){
+            int val = removeLast();
+            return val;
+        }
+        Node temp = head;
+        for(int i = 1 ; i<idx-1; i++){
+            temp = temp.next;
+        }
+
+        int val = temp.next.data;
+        if(temp.next.next == null){
+            temp.next = null;
+            tail = temp;
+        }else{
+            temp.next = temp.next.next;
+        }
+        size--;
+        return val;
+    }
+    void removeByValue(int value){
+        if(head==null){
+            System.out.println("Linked is Empty");
+            return;
+        }
+        if(value == head.data){
+            int val = removeFirst();
+            System.out.println("Value Delete");
+            size--;
+            return;
+        }
+        if(value==tail.data){
+            int val = removeLast();
+            System.out.println("Value Delete");
+            size--;
+            return;
+        }
+        Node temp = head;
+        int i = 1;
+        while(temp.data!=value){
+            temp = temp.next;
+            i++;
+        }
+        int val = removeByIndex(i);
+        System.out.println("Deleted Value = "+val);
+        size--;
+    }
+
+    int search(int key){
+        if(head==null){
+            System.out.println("Linked list is empty");
+            return -1;
+        }
+        if(head.data == key){
+            return 1;
+        }
+        if(tail.data == key){
+            return size;
+        }
+        int i = 1;
+        Node temp = head;
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
     }
     public static void main(String[] args) {
         LinkedList_1 ll = new LinkedList_1();
@@ -150,19 +233,33 @@ public class LinkedList_1{
         ll.addFirst(10);
         ll.addLast(30);
         ll.addLast(40);
-        ll.addMiddle(25, 4);
+        ll.addMiddle(25, 3);
         // System.out.println("Size of LinkedList = "+size);
-        ll.printLL();
-        int firstDelete = ll.removeFirst();
-        System.out.println("Deleted Value = "+firstDelete);
-        int lastDelete = ll.removeLast();
-        System.out.println("Deleted Value = "+lastDelete);
-        ll.printLL();
-        lastDelete = ll.removeLast();
-        System.out.println("Deleted Value = "+lastDelete);
-        ll.printLL();
-        
 
+        // ll.printLL();
+        // int firstDelete = ll.removeFirst();
+        // System.out.println("Deleted Value = "+firstDelete);
+        // int lastDelete = ll.removeLast();
+        // System.out.println("Deleted Value = "+lastDelete);
+        // ll.printLL();
+        // lastDelete = ll.removeLast();
+        // System.out.println("Deleted Value = "+lastDelete);
+        // ll.printLL();
+
+        // ll.printLL();
+        // int delete = ll.removeByIndex(5);
+        // System.out.println("Delete Value = "+delete);
+
+        // ll.printLL();
+        // ll.removeByValue(30);
+
+        ll.printLL();
+        int ans = ll.search(50);
+        if(ans==-1){
+            System.out.println("Value not Found");
+        }else{
+            System.out.println("Value Found at position  =  "+ans);
+        }
     }
 
 }
