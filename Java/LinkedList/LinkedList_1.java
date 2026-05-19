@@ -58,13 +58,51 @@ public class LinkedList_1{
         }
         System.out.print("Null");
     }
+    public void addMiddle(int data , int idx){
+
+        if(idx < 1 || idx > size+1){
+            System.out.println("Invalid index");
+            return;
+        }
+
+        Node newNode = new Node(data);
+        if(head==null){
+            head=tail=newNode;
+            size++;
+            return;
+        }
+        if(idx==1){
+            newNode.next = head;
+            head = newNode;
+            size++;
+            return;
+        }
+        if(idx == size+1){
+            tail.next = newNode;
+            newNode.next = null;
+            tail = newNode;
+            size++;
+            return;
+        }
+      
+        Node temp = head;
+        int i = 1;
+        while(i < idx - 1 && temp.next!=null){
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+        size++;
+        return;
+    }
     public static void main(String[] args) {
         LinkedList_1 ll = new LinkedList_1();
         ll.addFirst(20);
         ll.addFirst(10);
         ll.addLast(30);
         ll.addLast(40);
-
+        ll.addMiddle(25, 4);
         ll.printLL();
     }
 
