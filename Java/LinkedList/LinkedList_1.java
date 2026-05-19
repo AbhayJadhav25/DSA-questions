@@ -56,7 +56,7 @@ public class LinkedList_1{
             System.out.print(temp.data+"->");
             temp = temp.next;
         }
-        System.out.print("Null");
+        System.out.print("Null\n");
     }
     public void addMiddle(int data , int idx){
 
@@ -105,11 +105,44 @@ public class LinkedList_1{
         if(head.next == null){
             int val = head.data;
             head = tail=null;
+            size--;
             return val;
         }
         int val = head.data;
         head = head.next;
+        size--;
         return val;
+    }
+    int removeLast(){
+        if(head==null){
+            System.out.println("Linked List is empty");
+            return -1;
+        }
+        int val = tail.data;
+        if(head==tail){
+            head=tail=null;
+            size--;
+            return val;
+        }
+        //solution 1 : temp.next!=tail -->stop at second last node.
+        
+        /*Node temp = head;
+        while(temp.next !=tail){
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        size--;
+        return val;*/
+
+        Node temp = head;
+        for(int i= 0 ; i<size - 2; i++){
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        return val;
+        
     }
     public static void main(String[] args) {
         LinkedList_1 ll = new LinkedList_1();
@@ -119,8 +152,14 @@ public class LinkedList_1{
         ll.addLast(40);
         ll.addMiddle(25, 4);
         // System.out.println("Size of LinkedList = "+size);
+        ll.printLL();
         int firstDelete = ll.removeFirst();
         System.out.println("Deleted Value = "+firstDelete);
+        int lastDelete = ll.removeLast();
+        System.out.println("Deleted Value = "+lastDelete);
+        ll.printLL();
+        lastDelete = ll.removeLast();
+        System.out.println("Deleted Value = "+lastDelete);
         ll.printLL();
         
 
