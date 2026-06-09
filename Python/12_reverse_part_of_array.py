@@ -21,5 +21,15 @@ def main():
 
     reverse_array = array_reverse(arr , left , right)
     print(reverse_array)
+
+    #Reverse using python function
+    arr.reverse()   #.reverse() modify the original array
+    print(f"Using .reverse() = {arr}")
+
+    #keep original 
+    arr.reverse()
+    reverse2 = arr[::-1]  #it creates a new reverse copy.
+    print(f"using [::-1] = {reverse2}")
+
 if __name__ == "__main__":
     main()
