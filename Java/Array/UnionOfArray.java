@@ -4,7 +4,7 @@ public class UnionOfArray {
 
     static void unionOfArray(int arr1[] , int arr2[]){
         HashSet<Integer> set = new HashSet<>();
-        ArrayList<Integer> arr = new ArrayList<>();
+       
 
         for(int num : arr1){
             set.add(num);
@@ -15,6 +15,7 @@ public class UnionOfArray {
                 set.add(num);
             }
         }
+         ArrayList<Integer> arr = new ArrayList<>(set);
         System.out.println(set);
     }
     public static void main(String[] args) {

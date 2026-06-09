@@ -1,4 +1,4 @@
-public class Sort_0n1 {
+public class Sort_0n1_7 {
     static int[] sort(int arr[]){
         int n = arr.length;
 

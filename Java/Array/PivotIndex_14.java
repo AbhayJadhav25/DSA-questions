@@ -13,7 +13,7 @@ public class PivotIndex_14 {
             left[i] = left[i-1] + arr[i];
         }
 
-        for(int i = n-2 ; i>0 ; i--){
+        for(int i = n-2 ; i>=0 ; i--){
             right[i] = right[i+1]+arr[i];
         }
 

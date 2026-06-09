@@ -41,7 +41,7 @@ public class ShiftByKPos {
     }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6,7,8,9};
-         shiftByKPosition2(arr , 4);
+         shiftByKPosition(arr , 4);
     
         // System.out.print("Array Before Shifting =  ");
         // for(int nums : arr){
