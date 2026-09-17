@@ -28,3 +28,18 @@ def main():
     print(ans)
 if __name__ == "__main__":
     main()
+
+
+'''  
+register/Authentication
+
+Applicant - user information
+
+Application - Automation , API gateway
+
+The Perfect BA
+Business Analyst A to Z master class
+Chandoo for Excel
+LearnWidGiggs for powerBI
+
+'''
